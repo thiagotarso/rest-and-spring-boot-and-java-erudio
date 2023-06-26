@@ -47,16 +47,35 @@ public class PersonServices {
 		
 	} 
 	
+	public Person create(Person person) { 
+		
+		logger.info("create one person!");
+		
+	return person;	
+	}
+	
+    public Person update(Person person) { 
+		
+		logger.info("updating one person!");
+		
+	return person;	
+	}
+    
+   public void delete(String id) { 
+		
+		logger.info("delete one person!");
+	} 
+		
 	private Person mockPerson(int i) {
 	
         Person person = new Person();
 		person.setId(counter.incrementAndGet());
-		person.setNombre("person nombre" +i);
-		person.setDocumento("Last Documento" +i);
-		person.setDireccion("Direcion" +i);
-		person.setCodigoPostal("Codipo postal" +i);
-		person.setCiudad("Ciudad" +i);
-		person.setProvincia("Provincia" +i);
+		person.setNombre("person nombre " +i);
+		person.setDocumento("Last Documento " +i);
+		person.setDireccion("Direcion " +i);
+		person.setCodigoPostal("Codipo postal " +i);
+		person.setCiudad("Ciudad " +i);
+		person.setProvincia("Provincia " +i);
 		
 		return person;
 	}
