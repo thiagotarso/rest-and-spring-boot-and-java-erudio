@@ -3,16 +3,39 @@ package com.example.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity 
+@Table(name = "person")
 public class Person implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column( nullable = false, length = 40)
     private String nombre;
+	
+	@Column
     private String Documento;
-    private String direccion;
+	
+	@Column( nullable = false, length = 40)
+	private String direccion;
+   
+    @Column(name = "codigo_postal",length = 10)
     private String codigoPostal;
+    
+    @Column
     private String ciudad;
+    
+    @Column
     private String provincia;
     
 	public Person() {
